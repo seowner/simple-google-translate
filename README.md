@@ -4,36 +4,32 @@ A simple PHP class for Google translate API. This class is designed to be used t
 
 # How to Use
 
-Create an API key on [Google Cloud](https://cloud.google.com/) Translate.
-
-Put google-translate.class.php in a folder of your choosing and require the class in your PHP file.
-
-```
-require_once '/path/to/google.translate.class.php';
-```
-
-Assign source language and target language variables. [SerpAPI](https://serpapi.com/google-languages) has a good list of all the language codes in you need them.
-
-```
-$sourceLanguage = 'en';
-$targetLanguage = 'de';
-```
-
-Execute the translation.
-
-```
-$output = $client->translate($string, $sourceLanguage, $targetLanguage);
-```
+1. Create an API key on [Google Cloud](https://cloud.google.com/) Translate.
+2. Put google-translate.class.php in a folder of your choosing and require the class in your PHP file.
+3. Make sure to add your API key before executing the code.
+4. Assign source language and target language variables. [SerpAPI](https://serpapi.com/google-languages) has a good list of all the language codes in you need them.
+5. Execute the translation.
 
 # Example
 
+This example assumes that you use the default of $client and your API key is correct.
+
 ```
+// Require the class
 require_once '/path/to/google.translate.class.php';
 
+// Add API key
+$apiKey = 'YOUR_API_KEY';
+$client = new SimpleGoogleTranslate($apiKey);
+
+// Assign language variables
 $sourceLanguage = 'en';
 $targetLanguage = 'de';
 
+// Add a string to translate
 $string = "Hello this is a test.";
+
+// Execute the code and get the result
 $output = $client->translate($string, $sourceLanguage, $targetLanguage);
 echo $output;
 
