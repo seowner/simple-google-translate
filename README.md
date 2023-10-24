@@ -12,8 +12,6 @@ A simple PHP class for Google translate API. This class is designed to be used t
 
 # Example
 
-This example assumes that you use the default of $client and your API key is correct.
-
 ```
 // Require the class
 require_once '/path/to/google.translate.class.php';
